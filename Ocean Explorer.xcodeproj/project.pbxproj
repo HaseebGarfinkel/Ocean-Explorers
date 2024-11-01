@@ -22,6 +22,14 @@
 		0F3B8B4B2CCF5E4A00775DC7 /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B8B472CCF5E4A00775DC7 /* GameType.swift */; };
 		0F3B8B4C2CCF5E4A00775DC7 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3B8B482CCF5E4A00775DC7 /* Dependencies.swift */; };
 		0F571D022CD0396300CD387E /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F571D012CD0396300CD387E /* test.swift */; };
+		989D64172CD3F3AA00A7621A /* OEGameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D64152CD3F3AA00A7621A /* OEGameInfo.swift */; };
+		989D64182CD3F3AA00A7621A /* OELayoutInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D64162CD3F3AA00A7621A /* OELayoutInfo.swift */; };
+		989D641A2CD3F46500A7621A /* OEGameContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D64192CD3F46500A7621A /* OEGameContext.swift */; };
+		989D641C2CD3F47700A7621A /* OEGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D641B2CD3F47700A7621A /* OEGameScene.swift */; };
+		989D641F2CD3F4EB00A7621A /* OEBoxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D641E2CD3F4EB00A7621A /* OEBoxNode.swift */; };
+		989D64222CD3F67A00A7621A /* OEGamePlayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D64202CD3F67A00A7621A /* OEGamePlayState.swift */; };
+		989D64252CD40A2600A7621A /* KalebContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D64242CD40A2600A7621A /* KalebContentView.swift */; };
+		989D64262CD40A2600A7621A /* KalebContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D64242CD40A2600A7621A /* KalebContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +67,13 @@
 		0F3B8B472CCF5E4A00775DC7 /* GameType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
 		0F3B8B482CCF5E4A00775DC7 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		0F571D012CD0396300CD387E /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		989D64152CD3F3AA00A7621A /* OEGameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEGameInfo.swift; sourceTree = "<group>"; };
+		989D64162CD3F3AA00A7621A /* OELayoutInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OELayoutInfo.swift; sourceTree = "<group>"; };
+		989D64192CD3F46500A7621A /* OEGameContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEGameContext.swift; sourceTree = "<group>"; };
+		989D641B2CD3F47700A7621A /* OEGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEGameScene.swift; sourceTree = "<group>"; };
+		989D641E2CD3F4EB00A7621A /* OEBoxNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEBoxNode.swift; sourceTree = "<group>"; };
+		989D64202CD3F67A00A7621A /* OEGamePlayState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEGamePlayState.swift; sourceTree = "<group>"; };
+		989D64242CD40A2600A7621A /* KalebContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KalebContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +125,7 @@
 		0F28EAB62CCDA51F00F16CB4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				989D64242CD40A2600A7621A /* KalebContentView.swift */,
 				0F28EAB72CCDA51F00F16CB4 /* Ocean_ExplorerApp.swift */,
 				0F28EAB82CCDA51F00F16CB4 /* ContentView.swift */,
 			);
@@ -156,7 +172,13 @@
 		0F3B8B4D2CCF5E5E00775DC7 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				989D64132CD3F33600A7621A /* Helpers */,
+				989D641D2CD3F4DA00A7621A /* Nodes */,
+				989D64212CD3F67A00A7621A /* States */,
+				989D64232CD3F68700A7621A /* Models */,
 				0F571D012CD0396300CD387E /* test.swift */,
+				989D64192CD3F46500A7621A /* OEGameContext.swift */,
+				989D641B2CD3F47700A7621A /* OEGameScene.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -178,6 +200,38 @@
 				0F3B8B472CCF5E4A00775DC7 /* GameType.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		989D64132CD3F33600A7621A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				989D64152CD3F3AA00A7621A /* OEGameInfo.swift */,
+				989D64162CD3F3AA00A7621A /* OELayoutInfo.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		989D641D2CD3F4DA00A7621A /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				989D641E2CD3F4EB00A7621A /* OEBoxNode.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		989D64212CD3F67A00A7621A /* States */ = {
+			isa = PBXGroup;
+			children = (
+				989D64202CD3F67A00A7621A /* OEGamePlayState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		989D64232CD3F68700A7621A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,13 +392,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				989D64262CD40A2600A7621A /* KalebContentView.swift in Sources */,
+				989D64172CD3F3AA00A7621A /* OEGameInfo.swift in Sources */,
+				989D641F2CD3F4EB00A7621A /* OEBoxNode.swift in Sources */,
+				989D64182CD3F3AA00A7621A /* OELayoutInfo.swift in Sources */,
+				989D641C2CD3F47700A7621A /* OEGameScene.swift in Sources */,
 				0F3B8B4C2CCF5E4A00775DC7 /* Dependencies.swift in Sources */,
 				0F28EAE12CCDA52400F16CB4 /* ContentView.swift in Sources */,
+				989D64222CD3F67A00A7621A /* OEGamePlayState.swift in Sources */,
 				0F28EADF2CCDA52400F16CB4 /* Ocean_ExplorerApp.swift in Sources */,
 				0F3B8B4A2CCF5E4A00775DC7 /* GameModeType.swift in Sources */,
 				0F3B8B4B2CCF5E4A00775DC7 /* GameType.swift in Sources */,
 				0F3B8B492CCF5E4A00775DC7 /* GameContext.swift in Sources */,
 				0F571D022CD0396300CD387E /* test.swift in Sources */,
+				989D641A2CD3F46500A7621A /* OEGameContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +415,7 @@
 			files = (
 				0F28EAE22CCDA52400F16CB4 /* ContentView.swift in Sources */,
 				0F28EAE02CCDA52400F16CB4 /* Ocean_ExplorerApp.swift in Sources */,
+				989D64252CD40A2600A7621A /* KalebContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

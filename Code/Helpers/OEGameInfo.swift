@@ -1,12 +1,12 @@
 //
 //  TTGameInfo.swift
-//  Test
+//  Ocean Explorer
 //
-//  Created by Hyung Lee on 10/20/24.
+//  Created by Kaleb Ho Ching on 10/29/24.
 //
 
 import Foundation
 
-struct TTGameInfo {
+struct OEGameInfo {
     var score = 0
 }

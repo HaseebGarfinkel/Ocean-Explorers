@@ -1,15 +1,15 @@
 //
-//  TTBoxNode.swift
-//  Test
+//  OEBoxNode.swift
+//  Ocean Explorer
 //
-//  Created by Hyung Lee on 10/20/24.
+//  Created by Kaleb Ho Ching on 10/29/24.
 //
 
 import SpriteKit
 
-class TTBoxNode: SKNode {
+class OEBoxNode: SKNode {
     var box: SKShapeNode = SKShapeNode()
-    func setup(screenSize: CGSize, layoutInfo: TTLayoutInfo) {
+    func setup(screenSize: CGSize, layoutInfo: OELayoutInfo) {
         let boxNode = SKShapeNode(rect: .init(origin: .zero,
                                           size: layoutInfo.boxSize),
                               cornerRadius: 8.0)

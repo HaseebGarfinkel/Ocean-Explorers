@@ -1,25 +1,24 @@
 //
-//  TTGameContext.swift
-//  Test
+//  OEGameContext.swift
+//  Ocean Explorer
 //
-//  Created by Hyung Lee on 10/20/24.
-//
+//  Created by Kaleb Ho Ching on 10/29/24.
 
 import Combine
 import GameplayKit
 
-class TTGameContext: GameContext {
-    var gameScene: TTGameScene? {
-        scene as? TTGameScene
+class OEGameContext: GameContext {
+    var gameScene: OEGameScene? {
+        scene as? OEGameScene
     }
     let gameMode: GameModeType
-    let gameInfo: TTGameInfo
-    var layoutInfo: TTLayoutInfo = .init(screenSize: .zero)
+    let gameInfo: OEGameInfo
+    var layoutInfo: OELayoutInfo = .init(screenSize: .zero)
     
     private(set) var stateMachine: GKStateMachine?
     
     init(dependencies: Dependencies, gameMode: GameModeType) {
-        self.gameInfo = TTGameInfo()
+        self.gameInfo = OEGameInfo()
         self.gameMode = gameMode
         super.init(dependencies: dependencies)
     }
@@ -28,7 +27,7 @@ class TTGameContext: GameContext {
         guard let gameScene else { return }
         print("did configure states")
         stateMachine = GKStateMachine(states: [
-            TTGameIdleState(scene: gameScene, context: self)
+            OEGamePlayState(scene: gameScene, context: self)
         ])
     }
 

@@ -8,7 +8,5 @@
 import Foundation
 
 enum GameModeType: Equatable {
-    case multi
-    case random
     case single
 }

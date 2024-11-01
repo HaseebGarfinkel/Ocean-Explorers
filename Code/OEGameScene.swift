@@ -1,19 +1,19 @@
 //
-//  TTGameScene.swift
-//  Test
+//  OEGameScene.swift
+//  Ocean Explorer
 //
-//  Created by Hyung Lee on 10/20/24.
+//  Created by Kaleb Ho Ching on 10/29/24.
 //
 
 import SpriteKit
 import GameplayKit
 
-class TTGameScene: SKScene {
-    weak var context: TTGameContext?
+class OEGameScene: SKScene {
+    weak var context: OEGameContext?
     
-    var box: TTBoxNode?
+    var box: OEBoxNode?
     
-    init(context: TTGameContext, size: CGSize) {
+    init(context: OEGameContext, size: CGSize) {
         self.context = context
         super.init(size: size)
     }
@@ -29,38 +29,46 @@ class TTGameScene: SKScene {
         context.scene = self
         context.configureStates()
 
-        context.layoutInfo = TTLayoutInfo(screenSize: size)
+        context.layoutInfo = OELayoutInfo(screenSize: size)
         let center = CGPoint(x: size.width / 2.0 - context.layoutInfo.boxSize.width / 2.0,
-                             y: size.height / 2.0)
-        let box = TTBoxNode()
+                             y: context.layoutInfo.boxSize.height / 2.0)
+        let box = OEBoxNode()
         box.setup(screenSize: size, layoutInfo: context.layoutInfo)
         box.position = center
         addChild(box)
         self.box = box
         
         
-        context.stateMachine?.enter(TTGameIdleState.self)
+        context.stateMachine?.enter(OEGamePlayState.self)
+        
+        addSwipeGestures()
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first, let state = context?.stateMachine?.currentState as? TTGameIdleState else {
-            return
-        }
-        state.handleTouch(touch)
+    func addSwipeGestures() {
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeUp.direction = .up
+        view?.addGestureRecognizer(swipeUp)
+
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeDown.direction = .down
+        view?.addGestureRecognizer(swipeDown)
+
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeLeft.direction = .left
+        view?.addGestureRecognizer(swipeLeft)
+
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeRight.direction = .right
+        view?.addGestureRecognizer(swipeRight)
     }
 
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first, let state = context?.stateMachine?.currentState as? TTGameIdleState else {
-            return
-        }
-        state.handleTouchMoved(touch)
-    }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first, let state = context?.stateMachine?.currentState as? TTGameIdleState else {
-            return
+    @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
+        if let playingState = context?.stateMachine?.currentState as? OEGamePlayState {
+            playingState.handleSwipe(direction: gesture.direction)
         }
-        state.handleTouchEnded(touch)
     }
+
+    
 }
